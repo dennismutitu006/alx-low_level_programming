@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	}
 
 	fd_f = open(file_from, O_RDONLY);
-    	if (fd_f == -1)
+	if (fd_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from  %s\n", file_from);
 		return (98);
@@ -37,12 +37,13 @@ int main(int argc, char *argv[])
 	while ((br = read(fd_f, buffer, BUFFER_SIZE)) > 0)
 	{
 		bw = write(fd_to, buffer, br);
-		if (bw == -1) {
+		if (bw == -1)
+		{
 		close(fd_f);
 		close(fd_to);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		return (99);
-	}
+		}
 	}
 	if (br == -1)
 	{
