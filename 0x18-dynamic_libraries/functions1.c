@@ -73,8 +73,8 @@ char *_strcat(char *dest, char *src)
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	size_t dlen = _strlen(dest);
-	size_t i;
+	int dlen = _strlen(dest);
+	int i;
 
 	for (i = 0; i < n && src[i] != '\0'; i++)
 		dest[dlen + i] = src[i];
